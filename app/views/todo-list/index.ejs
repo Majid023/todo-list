@@ -1,0 +1,12 @@
+
+<ul>
+<% lists.forEach(function( list ) { %>
+  <li><%= list.item %> <a href="/todo-list/edit/<%=list.id%>">Edit?</a>  <a href="/todo-list/destroy/<%=list.id%>"> Delete</a></li>
+<%})%>
+
+<br/>
+<br/>
+<form action="/todo-list/create">
+    <input type="text" name="item" class="form-control" required="required"/>
+    <button type="submit" class="btn btn-primary btn-sm" value="Add">ADD</button>
+</form>
