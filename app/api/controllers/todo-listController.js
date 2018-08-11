@@ -38,5 +38,11 @@ module.exports = {
     },
     update: function(req, res, next) {
 
+        Todolist.update(req.param('id'), req.params.all(), function listUpdated(err) {
+
+            if(err) return next(err);
+
+            res.redirect('todo-list');
+        })
     }
 }

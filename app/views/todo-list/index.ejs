@@ -3,10 +3,24 @@
 <% lists.forEach(function( list ) { %>
   <li><%= list.item %> <a href="/todo-list/edit/<%=list.id%>">Edit?</a>  <a href="/todo-list/destroy/<%=list.id%>"> Delete</a></li>
 <%})%>
+</ul>
 
 <br/>
 <br/>
-<form action="/todo-list/create">
+
+<form action="/todo-list/create" >
     <input type="text" name="item" class="form-control" required="required"/>
     <button type="submit" class="btn btn-primary btn-sm" value="Add">ADD</button>
 </form>
+<span onclick="fun()"  > show</span>
+<form id='show' action="/todo-list/update" style="display: none" >
+    <input type="text"  value="121" name="item" class="form-control" required="required"/>
+    <button type="submit" class="btn btn-primary btn-sm" value="Add">Edit</button>
+</form>
+
+
+<script>
+   function fun(){
+        document.getElementById("show").style.display= "block";
+   }
+</script>
